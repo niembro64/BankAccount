@@ -8,7 +8,6 @@ class BankAccount:
         self.balance = b
         self.int_rate = i_r
 
-
     @classmethod
     def printAll(cls):
         RobyAcct.display_account_info()
@@ -37,11 +36,16 @@ class BankAccount:
             self.balance = self.balance * self.int_rate
         return self
 
+
+##################################################
+
 RobyAcct = BankAccount("Roby")
 EricAcct = BankAccount("Eric")
 
-RobyAcct.deposit(10).deposit(100).deposit(1000).withdraw(1).yield_interest().display_account_info()
-EricAcct.deposit(10000).deposit(10000).withdraw(1).withdraw(1).withdraw(1).withdraw(1).yield_interest().display_account_info()
+RobyAcct.deposit(10).deposit(100).deposit(1000).withdraw(
+    1).yield_interest().display_account_info()
+EricAcct.deposit(10000).deposit(10000).withdraw(1).withdraw(
+    1).withdraw(1).withdraw(1).yield_interest().display_account_info()
 
 
 print()
