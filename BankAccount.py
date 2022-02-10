@@ -39,6 +39,28 @@ class BankAccount:
 
 ##################################################
 
+class User:
+
+    def __init__ (self, n = "BLANK", e = "EMPTY"):
+        self.name = n
+        self.email = e
+        self.account = BankAccount(i_r = .02, b = 0)
+
+    def make_deposit(self, amount):
+        self.account.deposit(amount)
+        return self
+
+    def make_withdraw(self, amount):
+        self.account.withdraw(amount)
+        return self
+
+    def display_user_balance(self):
+        self.account.display_account_info()
+        return self
+
+
+###################################################
+
 RobyAcct = BankAccount("Roby")
 EricAcct = BankAccount("Eric")
 
@@ -50,3 +72,11 @@ EricAcct.deposit(10000).deposit(10000).withdraw(1).withdraw(
 
 print()
 RobyAcct.printAll()
+
+
+########################
+
+print()
+RobyUser = User()
+
+RobyUser.make_deposit(10).make_withdraw(1).display_user_balance()
